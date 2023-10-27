@@ -13,7 +13,7 @@ const MainNavigation = () => {
                 <li>
                     <NavLink
                         className={({isActive}) => isActive ? 'active' : undefined }
-                        to='/task-list'
+                        to='task-list'
                         end
                     >Task List</NavLink>
                 </li>
