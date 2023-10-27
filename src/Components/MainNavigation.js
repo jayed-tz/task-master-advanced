@@ -1,13 +1,21 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 const MainNavigation = () => {
     return <header>
         <nav>
             <ul>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <NavLink
+                        className={({isActive}) => isActive ? 'active' : undefined }
+                        to='/'
+                        end
+                    >Home</NavLink>
                 </li>
                 <li>
-                    <Link to='/task-list'>Task List</Link>
+                    <NavLink
+                        className={({isActive}) => isActive ? 'active' : undefined }
+                        to='/task-list'
+                        end
+                    >Task List</NavLink>
                 </li>
             </ul>
         </nav>
