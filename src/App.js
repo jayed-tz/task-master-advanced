@@ -2,9 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import HomePage from "./pages/Home";
-import TaskList from "./pages/TaskList";
+import TaskListPage from "./pages/TaskList";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
+import TaskDetailPage from "./pages/TaskDetail";
 
 // optional: createROutesFromElements- 446
 const router = createBrowserRouter([
@@ -13,8 +14,18 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      {path: '/', element: <HomePage />},
-      {path: '/task-list', element: <TaskList />}
+      {
+        path: '/',
+        element: <HomePage />
+      },
+      {
+        path: '/task-list',
+        element: <TaskListPage />
+      },
+      {
+        path: '/task-list/:id',
+        element: <TaskDetailPage />
+      }
     ]
   }
 ]);
