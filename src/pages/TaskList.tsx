@@ -4,10 +4,10 @@ import {useState} from "react";
 
 import { useAppSelector, useAppDispatch } from '../hooks'
 import {taskActions} from "../store/taskSlice";
-import ITask from "../models/iTask";
+import {selectTasks} from "../store/taskSelectors";
 
 const TaskListPage = () => {
-    const tasks = useAppSelector((state) => state.task.tasks)
+    const tasks = useAppSelector(selectTasks)
     const dispatch = useAppDispatch()
     const removeTaskHandler = (id: string) => {
        dispatch(taskActions.removeTask(id));

@@ -25,5 +25,4 @@ const taskSlice = createSlice({
 });
 
 export const taskActions = taskSlice.actions;
-export const selectTasks = (state: RootState) => state.task.tasks
 export const taskReducer = taskSlice.reducer
