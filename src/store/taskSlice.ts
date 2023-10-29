@@ -18,7 +18,9 @@ const taskSlice = createSlice({
                 title: action.payload
             });
         },
-        removeTask(state) {}
+        removeTask(state, action: PayloadAction<string>) {
+            state.tasks = state.tasks.filter(task => task.id !== action.payload);
+        }
     }
 });
 
