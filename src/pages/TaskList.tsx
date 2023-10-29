@@ -1,16 +1,16 @@
 import {Link} from "react-router-dom";
+import NewTask from "../components/NewTask";
+import {useState} from "react";
+import Task from "../models/task";
 
 const TaskListPage = () => {
-    const tasks = [
-        {
-            id: '1',
-            title: 'Task A'
-        },
-        {
-            id: '2',
-            title: 'Task B'
-        }
-    ];
+    const addTaskHandler = (title: string) => {
+        console.log(title);
+        const newTask = new Task(title);
+        setTasks((prevState) => prevState.concat(newTask));
+    }
+
+    const [tasks, setTasks] = useState<Task[]>([]);
 
     return <>
         <h2>task list</h2>
@@ -20,6 +20,7 @@ const TaskListPage = () => {
                 </li>
             )}
         </ul>
+        <NewTask onAddTask={addTaskHandler} />
     </>
 }
 

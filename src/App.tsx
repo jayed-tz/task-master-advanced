@@ -7,8 +7,6 @@ import HomePage from "./pages/Home";
 import TaskListPage from "./pages/TaskList";
 import TaskDetailPage from "./pages/TaskDetail";
 
-
-
 // optional: createR0utesFromElements- 446
 const router = createBrowserRouter([
   {
