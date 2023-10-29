@@ -13,11 +13,10 @@ const taskSlice = createSlice({
     initialState,
     reducers: {
         addTask(state, action: PayloadAction<string>) {
-            const newTask: ITask = {
+            state.tasks.push({
                 id: new Date().toISOString(),
                 title: action.payload
-            };
-            state.tasks.push(newTask);
+            });
         },
         removeTask(state) {}
     }
