@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
 import NewTask from "../components/NewTask";
 import {useState} from "react";
-import Task from "../models/task";
 
 import { useAppSelector, useAppDispatch } from '../hooks'
 import {taskActions} from "../store/taskSlice";
+import ITask from "../models/iTask";
 
 const TaskListPage = () => {
+    console.log('being executed');
     const tasks = useAppSelector((state) => state.task.tasks)
     const dispatch = useAppDispatch()
     const deleteTaskHandler = (id: string) => {
@@ -14,8 +15,11 @@ const TaskListPage = () => {
     }
     const addTaskHandler = (title: string) => {
         dispatch(taskActions.addTask(title))
-        console.log(title);
-        const newTask = new Task(title);
+        // console.log(title);
+        // const newTask: ITask = {
+        //     id: new Date().toISOString(),
+        //     title: title
+        // };
         //setTasks((prevState) => prevState.concat(newTask));
     }
 

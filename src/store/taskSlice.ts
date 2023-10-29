@@ -1,9 +1,9 @@
-import Task from "../models/task";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "./store";
+import ITask from "../models/iTask";
 
 interface TaskState {
-    tasks: Task[]
+    tasks: ITask[]
 }
 
 const initialState: TaskState = {tasks: []};
@@ -13,7 +13,11 @@ const taskSlice = createSlice({
     initialState,
     reducers: {
         addTask(state, action: PayloadAction<string>) {
-            state.tasks.push(new Task(action.payload));
+            const newTask: ITask = {
+                id: new Date().toISOString(),
+                title: action.payload
+            };
+            state.tasks.push(newTask);
         },
         removeTask(state) {}
     }
