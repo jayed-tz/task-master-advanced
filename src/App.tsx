@@ -1,13 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import HomePage from "./pages/Home";
-import TaskListPage from "./pages/TaskList";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
+import HomePage from "./pages/Home";
+import TaskListPage from "./pages/TaskList";
 import TaskDetailPage from "./pages/TaskDetail";
 
-// optional: createROutesFromElements- 446
+
+
+// optional: createR0utesFromElements- 446
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
     ]
   }
 ]);
-function App() {
+const App = () => {
   return <RouterProvider router={router} />;
 }
 
