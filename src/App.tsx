@@ -6,6 +6,8 @@ import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
 import TaskListPage from "./pages/TaskList";
 import TaskDetailPage from "./pages/TaskDetail";
+import {Provider} from "react-redux";
+import store from "./store/store";
 
 // optional: createR0utesFromElements- 446
 const router = createBrowserRouter([
@@ -30,7 +32,9 @@ const router = createBrowserRouter([
   }
 ]);
 const App = () => {
-  return <RouterProvider router={router} />;
+  return <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>;
 }
 
 export default App;
