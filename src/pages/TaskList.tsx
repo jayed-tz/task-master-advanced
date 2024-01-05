@@ -1,20 +1,24 @@
 import {Link} from "react-router-dom";
 import NewTask from "../components/NewTask";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import { useAppSelector, useAppDispatch } from '../hooks'
-import {taskActions} from "../store/taskSlice";
-import {selectTasks} from "../store/taskSelectors";
+import {addTask, fetchTaskData, removeTask} from "../store/taskSlice";
+import {getTaskState} from "../store/selectors";
 
 const TaskListPage = () => {
-    const tasks = useAppSelector(selectTasks)
+    const {tasks} = useAppSelector(getTaskState)
     const dispatch = useAppDispatch()
     const removeTaskHandler = (id: string) => {
-       dispatch(taskActions.removeTask(id));
+       dispatch(removeTask(id));
     }
     const addTaskHandler = (title: string) => {
-        dispatch(taskActions.addTask(title))
+        dispatch(addTask(title))
     }
+
+    useEffect(() => {
+        dispatch(fetchTaskData())
+    }, []);
 
     return <>
         <h2>task list</h2>
