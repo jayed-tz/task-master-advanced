@@ -1,9 +1,9 @@
 import TagV2 from "./tagv2";
 
-type TaskV2 = {
+type TaskUseState = {
     id: string;
     title: string;
     tags?: TagV2[]
 }
 
-export default TaskV2;
+export default TaskUseState;

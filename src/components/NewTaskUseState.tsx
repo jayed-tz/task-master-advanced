@@ -1,7 +1,7 @@
 import {useRef} from "react";
 import React from 'react'
-import TaskV2 from "../models/taskv2";
-const NewTaskV2: React.FC<{onAddTask: (task: TaskV2) => void}> = (props) => {
+import TaskUseState from "../models/taskUseState";
+const NewTaskUseState: React.FC<{onAddTask: (task: TaskUseState) => void}> = (props) => {
     const todoTextInputRef = useRef<HTMLInputElement>(null);
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
@@ -22,4 +22,4 @@ const NewTaskV2: React.FC<{onAddTask: (task: TaskV2) => void}> = (props) => {
     </form>
 }
 
-export default NewTaskV2;
+export default NewTaskUseState;
