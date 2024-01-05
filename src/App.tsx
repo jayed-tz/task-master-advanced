@@ -8,6 +8,8 @@ import TaskListPage from "./pages/TaskList";
 import TaskDetailPage from "./pages/TaskDetail";
 import {Provider} from "react-redux";
 import store from "./store/store";
+import TaskListV2 from "./pages/TaskListV2";
+import TaskListPageV2 from "./pages/TaskListV2";
 
 // optional: createR0utesFromElements- 446
 const router = createBrowserRouter([
@@ -27,7 +29,11 @@ const router = createBrowserRouter([
       {
         path: 'task-list/:id',
         element: <TaskDetailPage />
-      }
+      },
+      {
+        path: 'task-list-v2',
+        element: <TaskListPageV2 />
+      },
     ]
   }
 ]);
